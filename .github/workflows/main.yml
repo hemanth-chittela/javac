@@ -1,0 +1,32 @@
+name: example-basic
+# This workflow represents a set of basic End-to-End tests
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+  workflow_dispatch:
+
+jobs:
+
+  my_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: hello world
+        run: echo "hello world"
+ 
+      - name: checkout 
+        uses: actions/checkout@v2
+
+      - name: creating a folder
+        run: mkdir cool1337
+
+      - name: checkout again
+        uses: actions/checkout@v3
+
+  another_job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: saying good bye
+        run: echo "Good Bye" 
