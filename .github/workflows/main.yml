@@ -51,3 +51,13 @@ jobs:
         run: |
           aws s3 cp $GITHUB_WORKSPACE/.github/workflows/main.yml s3://cool1337/dev/main.yml
         shell: bash
+  
+  setting_up_java:
+    runs-on: ubuntu-20.04
+    
+    steps:       
+      - name: installing the Java version
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu' 
+          java-version: '17'
